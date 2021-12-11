@@ -1,5 +1,7 @@
 <img src="assets/logo.png" width="100">
 
+Support M1 Mac
+
 # PPet
 
 > 给你的桌面多一点趣味~😁
@@ -94,6 +96,12 @@
 ```
 $ yarn install
 $ yarn run start
+```
+
+for M1 Mac,
+
+```
+CXXFLAGS="--std=c++17" yarn install
 ```
 
 ## 欢迎参与贡献
