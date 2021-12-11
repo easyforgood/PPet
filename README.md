@@ -1,6 +1,6 @@
 <img src="assets/logo.png" width="100">
 
-Support M1 Mac
+# This fork is to support M1 Mac
 
 # PPet
 
