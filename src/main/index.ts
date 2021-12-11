@@ -11,13 +11,15 @@ import { format as formatUrl } from 'url';
 import { autoUpdater } from 'electron-updater';
 import Positioner from 'electron-positioner';
 import * as Sentry from '@sentry/electron';
+import * as remoteMain from '@electron/remote/main' ;
 import initTray from './ppetTray';
 import config from 'common/config';
 import initPPetPlugins from './ppetPlugins';
 import initStaticServe from './staticServe';
 
+remoteMain.initialize()
 Sentry.init({
-  dsn: 'https://57b49a715b324bbf928b32f92054c8d6@sentry.io/1872002'
+  dsn: 'https://31a8bc6cfcb04adea7750060b564c887@o1088544.ingest.sentry.io/6103282'
 });
 
 crashReporter.start({
@@ -70,7 +72,8 @@ function createMainWindow() {
     webPreferences: {
       nodeIntegration: true,
       webSecurity: false,
-      backgroundThrottling: false
+      backgroundThrottling: false,
+	    contextIsolation: false,
     }
   };
   Object.assign(opts, winBounds);
@@ -82,6 +85,7 @@ function createMainWindow() {
   if (isDevelopment) {
     window.webContents.openDevTools();
   }
+  remoteMain.enable(global.mainWindow.webContents)
 
   if (isDevelopment) {
     window.loadURL(`http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`);
@@ -151,13 +155,16 @@ export function createPluginsWindow() {
     height: 800,
     webPreferences: {
       nodeIntegration: true,
-      webSecurity: false
+      webSecurity: false,
+	    contextIsolation: false,
+
     }
   });
 
   pluginsWindow = window;
   global.pluginWebContents = window.webContents;
 
+  remoteMain.enable(global.pluginWebContents)
   if (isDevelopment) {
     window.webContents.openDevTools();
   }

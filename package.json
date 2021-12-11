@@ -23,11 +23,13 @@
     "lint": "eslint src --fix --ext .ts,.tsx "
   },
   "dependencies": {
-    "@sentry/electron": "1.1.0",
+    "@electron/remote": "^2.0.1",
+    "@sentry/electron": "^2.5.4",
     "html-loader": "1.0.0-alpha.0",
     "source-map-support": "^0.5.16"
   },
   "devDependencies": {
+    "@electron/remote": "^2.0.1",
     "@ant-design/icons": "^4.0.2",
     "@types/fs-extra": "^8.0.1",
     "@types/node": "^13.1.2",
@@ -36,15 +38,15 @@
     "@typescript-eslint/eslint-plugin": "^2.14.0",
     "@typescript-eslint/parser": "^2.14.0",
     "antd": "^4.0.0",
-    "electron": "11.0.0",
-    "electron-builder": "22.10.5",
+    "electron": "^16.0.0",
+    "electron-builder": "~22.10.5",
     "electron-localshortcut": "^3.2.1",
     "electron-positioner": "^4.1.0",
     "electron-store": "^5.1.0",
     "electron-updater": "^4.2.0",
     "electron-webpack": "^2.8.2",
     "electron-webpack-eslint": "^5.0.1",
-    "electron-webpack-ts": "^3.2.0",
+    "electron-webpack-ts": "^4.0.1",
     "eslint-plugin-react": "^7.17.0",
     "finalhandler": "^1.1.2",
     "font-awesome": "^4.7.0",

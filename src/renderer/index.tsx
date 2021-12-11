@@ -4,10 +4,10 @@ import * as ReactDOM from 'react-dom';
 import BasicLayout from './layouts/BasicLayout';
 import './index.scss';
 import { initGA, sendEvent } from './utils/ga';
-import { remote } from 'electron';
+import * as remote from '@electron/remote';
 
 Sentry.init({
-  dsn: 'https://57b49a715b324bbf928b32f92054c8d6@sentry.io/1872002'
+  dsn: 'https://31a8bc6cfcb04adea7750060b564c887@o1088544.ingest.sentry.io/6103282'
 });
 
 initGA();

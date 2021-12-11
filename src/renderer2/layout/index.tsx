@@ -20,7 +20,8 @@ const BasicLayout = () => {
       </Button>
       <Button
         type="ghost"
-        shape="circle-outline"
+        // shape="circle-outline"
+        shape="circle"
         onClick={e => {
           forceUpdate();
         }}

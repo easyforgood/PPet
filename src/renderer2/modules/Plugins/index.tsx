@@ -3,8 +3,9 @@ import './index.scss';
 import config from 'common/config';
 import { Button, Spin } from 'antd';
 import showGistBoxModal from '../GistBox/modal';
-import { ipcRenderer, remote } from 'electron';
+import { ipcRenderer } from 'electron';
 import { GlobalOutlined } from '@ant-design/icons';
+import * as remote from '@electron/remote'
 
 export interface IPlugin {
   data: { name: string; code: string; desc?: string };
@@ -167,7 +168,8 @@ const Plugins: FunctionComponent<{ refresh: Function }> = ({ refresh }) => {
                   )}
                   <Button
                     onClick={handleChangeStatusBtnClick.bind(null, item)}
-                    type={status === 'active' ? 'danger' : 'primary'}
+                    // type={status === 'active' ? 'danger' : 'primary'}
+                    type={status === 'active' ? 'ghost' : 'primary'}
                   >
                     {status === 'active' ? 'stop' : 'run'}
                   </Button>

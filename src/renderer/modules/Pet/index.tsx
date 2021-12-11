@@ -5,7 +5,8 @@ import React, {
   CSSProperties,
   FunctionComponent
 } from 'react';
-import { remote, webFrame, ipcRenderer, KeyboardInputEvent } from 'electron';
+import {  webFrame, ipcRenderer, KeyboardInputEvent } from 'electron';
+import * as remote from '@electron/remote'
 import path from 'path';
 import fs from 'fs';
 import { format as formatUrl } from 'url';
